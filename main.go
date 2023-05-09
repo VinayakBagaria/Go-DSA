@@ -1,0 +1,35 @@
+package main
+
+import (
+	"go-dsa/designpatterns"
+	"go-dsa/dp"
+	"go-dsa/graph"
+	"go-dsa/heap"
+	"go-dsa/linkedlist"
+	"go-dsa/queue"
+	"go-dsa/random"
+	"go-dsa/sorting"
+)
+
+const decision = "dynamic_programming"
+
+func main() {
+	switch decision {
+	case "sorting":
+		sorting.DoWork()
+	case "linkedlist":
+		linkedlist.DoWork()
+	case "queue":
+		queue.DoWork()
+	case "design_patterns":
+		designpatterns.DoWork()
+	case "graph":
+		graph.DoWork()
+	case "heap":
+		heap.DoWork()
+	case "random":
+		random.DoWork()
+	case "dynamic_programming":
+		dp.DoWork()
+	}
+}
