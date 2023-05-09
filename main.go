@@ -1,7 +1,6 @@
 package main
 
 import (
-	"go-dsa/designpatterns"
 	"go-dsa/dp"
 	"go-dsa/graph"
 	"go-dsa/heap"
@@ -21,8 +20,6 @@ func main() {
 		linkedlist.DoWork()
 	case "queue":
 		queue.DoWork()
-	case "design_patterns":
-		designpatterns.DoWork()
 	case "graph":
 		graph.DoWork()
 	case "heap":
