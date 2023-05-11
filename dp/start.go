@@ -9,4 +9,6 @@ func DoWork() {
 	DoCoinChangeCombination()
 	fmt.Println(separator)
 	DoLisLength()
+	fmt.Println(separator)
+	DoLisPrintAll()
 }

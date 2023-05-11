@@ -26,6 +26,7 @@ func lengthOfLIS(nums []int) int {
 }
 
 func DoLisLength() {
+	fmt.Println("Length of max LIS")
 	inputs := [][]int{
 		{1, 2, 4, 3},
 		{10, 9, 2, 5, 3, 7, 101, 18},
