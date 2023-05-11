@@ -8,5 +8,5 @@ func DoWork() {
 	fmt.Println(separator)
 	DoProductOfArrayExceptSelf()
 	fmt.Println(separator)
-	DoLongestIncreasingSubsequence()
+	DoLisLength()
 }
