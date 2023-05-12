@@ -9,4 +9,6 @@ func DoWork() {
 	DoProductOfArrayExceptSelf()
 	fmt.Println(separator)
 	DoLisLength()
+	fmt.Println(separator)
+	DoDeepFilter()
 }

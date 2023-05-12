@@ -10,7 +10,7 @@ import (
 	"go-dsa/sorting"
 )
 
-const decision = "dynamic_programming"
+const decision = "random"
 
 func main() {
 	switch decision {
