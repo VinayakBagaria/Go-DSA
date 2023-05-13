@@ -12,9 +12,7 @@ func insertElement(heap []int, value int) []int {
 
 		if heap[parent] < heap[i] {
 			// swap parent & current index
-			temp := heap[parent]
-			heap[parent] = heap[i]
-			heap[i] = temp
+			heap[parent], heap[i] = heap[i], heap[parent]
 
 			// next time, we will go up from this node now
 			i = parent
