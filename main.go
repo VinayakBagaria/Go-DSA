@@ -10,7 +10,7 @@ import (
 	"go-dsa/sorting"
 )
 
-const decision = "heap"
+const decision = "sorting"
 
 func main() {
 	switch decision {

@@ -32,4 +32,7 @@ func DoWork() {
 	fmt.Println(MergeSort(slice))
 	fmt.Println("-----------")
 
+	fmt.Println("Heap Sort")
+	fmt.Println(HeapSort(slice))
+	fmt.Println("-----------")
 }
