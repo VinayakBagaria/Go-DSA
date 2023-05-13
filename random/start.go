@@ -11,4 +11,6 @@ func DoWork() {
 	DoLisLength()
 	fmt.Println(separator)
 	DoDeepFilter()
+	fmt.Println(separator)
+	DoKthLargestElement()
 }
