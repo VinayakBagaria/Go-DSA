@@ -9,4 +9,6 @@ func DoWork() {
 	StartInsert()
 	fmt.Println(separator)
 	StartDelete()
+	fmt.Println(separator)
+	StartHeapify()
 }

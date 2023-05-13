@@ -5,20 +5,20 @@ import (
 )
 
 func findMax(heap []int, i int) int {
-	largestIndex := i
+	largest := i
 
-	leftIndex := 2 * i
-	rightIndex := 2*i + 1
+	l := 2*i + 1
+	r := 2*i + 2
 
-	if leftIndex < len(heap) && heap[leftIndex] > heap[largestIndex] {
-		largestIndex = leftIndex
+	if l < len(heap) && heap[l] > heap[largest] {
+		largest = l
 	}
 
-	if rightIndex < len(heap) && heap[rightIndex] > heap[largestIndex] {
-		largestIndex = rightIndex
+	if r < len(heap) && heap[r] > heap[largest] {
+		largest = r
 	}
 
-	return largestIndex
+	return largest
 }
 
 func deleteTop(heap []int) []int {
@@ -30,13 +30,13 @@ func deleteTop(heap []int) []int {
 	i := 0
 
 	for i < len(heap) {
-		largerIndex := findMax(heap, i)
+		largest := findMax(heap, i)
 
-		if i != largerIndex {
+		if i != largest {
 			// swap
-			heap[largerIndex], heap[i] = heap[i], heap[largerIndex]
+			heap[largest], heap[i] = heap[i], heap[largest]
 
-			i = largerIndex
+			i = largest
 		} else {
 			break
 		}
@@ -47,8 +47,8 @@ func deleteTop(heap []int) []int {
 
 func StartDelete() {
 	heap := []int{40, 30, 10, 20, 15}
-	var heapCopied []int
-	heapCopied = append(heapCopied, heap...)
+
+	heapCopied := append([]int{}, heap...)
 
 	fmt.Printf("Max Heap: %v\nPost Deletion becomes: %v\n", heap, deleteTop(heapCopied))
 }
