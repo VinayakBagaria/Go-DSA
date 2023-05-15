@@ -13,4 +13,6 @@ func DoWork() {
 	DoDeepFilter()
 	fmt.Println(separator)
 	DoKthLargestElement()
+	fmt.Println(separator)
+	DoMedianFromDataStream()
 }

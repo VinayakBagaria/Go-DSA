@@ -8,7 +8,7 @@ func insertElement(heap []int, value int) []int {
 	i := len(heap) - 1
 
 	for i > 0 {
-		parent := i / 2
+		parent := (i - 1) / 2
 
 		if heap[parent] < heap[i] {
 			// swap parent & current index
