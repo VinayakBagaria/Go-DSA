@@ -11,4 +11,6 @@ func DoWork() {
 	StartDelete()
 	fmt.Println(separator)
 	StartHeapify()
+	fmt.Println(separator)
+	StartInbuilt()
 }
