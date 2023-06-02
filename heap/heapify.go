@@ -12,12 +12,10 @@ func (h *MaxHeap) swap(i, j int) {
 	h.heap[i], h.heap[j] = h.heap[j], h.heap[i]
 }
 
-func (h *MaxHeap) heapify(i int) {
+func (h *MaxHeap) heapify(i, size int) {
 	largest := i
 	l := 2*i + 1
 	r := 2*i + 2
-
-	size := len(h.heap)
 
 	if l < size && h.heap[l] > h.heap[largest] {
 		largest = l
@@ -28,7 +26,7 @@ func (h *MaxHeap) heapify(i int) {
 
 	if i != largest {
 		h.swap(i, largest)
-		h.heapify(largest)
+		h.heapify(largest, size)
 	}
 }
 
@@ -36,8 +34,10 @@ func StartHeapify() {
 	arr := []int{20, 10, 30, 5, 50, 40}
 	h := &MaxHeap{heap: append([]int{}, arr...)}
 
-	for i := len(h.heap) / 2; i >= 0; i-- {
-		h.heapify(i)
+	size := len(h.heap)
+
+	for i := size / 2; i >= 0; i-- {
+		h.heapify(i, size)
 	}
 	fmt.Printf("Initial array: %v\nPost Heapify, Max Heap becomes: %v\n", arr, h.heap)
 }

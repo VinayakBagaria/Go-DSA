@@ -24,9 +24,9 @@ func (h *minHeap) Push(x interface{}) {
 }
 
 func (h *minHeap) Pop() interface{} {
-	n := (*h)[h.Len()-1]
+	popped := (*h)[h.Len()-1]
 	*h = (*h)[:h.Len()-1]
-	return n
+	return popped
 }
 
 func StartInbuilt() {
