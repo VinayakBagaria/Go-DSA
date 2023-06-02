@@ -15,4 +15,6 @@ func DoWork() {
 	DoKthLargestElement()
 	fmt.Println(separator)
 	DoMedianFromDataStream()
+	fmt.Println(separator)
+	DoTopKFrequentWords()
 }
