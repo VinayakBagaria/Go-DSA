@@ -17,4 +17,6 @@ func DoWork() {
 	DoMedianFromDataStream()
 	fmt.Println(separator)
 	DoTopKFrequentWords()
+	fmt.Println(separator)
+	DoSortCharsByFrequency()
 }
