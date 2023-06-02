@@ -18,5 +18,5 @@ func DoWork() {
 	fmt.Println(separator)
 	DoTopKFrequentWords()
 	fmt.Println(separator)
-	DoSortCharsByFrequency()
+	DoKthLargestInStream()
 }
