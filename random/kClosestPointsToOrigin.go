@@ -55,7 +55,3 @@ func kClosest(points [][]int, k int) [][]int {
 
 	return answers
 }
-
-func DoKClosestPointsToOrigin() {
-
-}
