@@ -10,7 +10,7 @@ import (
 	"go-dsa/sorting"
 )
 
-const decision = "sorting"
+const decision = "random"
 
 func main() {
 	switch decision {

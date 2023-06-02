@@ -1,54 +1,50 @@
 // https://leetcode.com/problems/kth-largest-element-in-an-array/
 package random
 
-import "fmt"
+import (
+	"container/heap"
+	"fmt"
+)
 
-type MinHeap struct {
-	heap []int
+type MaxHeap []int
+
+func (h MaxHeap) Swap(i, j int) {
+	h[i], h[j] = h[j], h[i]
 }
 
-func (h *MinHeap) swap(i, j int) {
-	h.heap[i], h.heap[j] = h.heap[j], h.heap[i]
+func (h MaxHeap) Len() int {
+	return len(h)
 }
 
-func (h *MinHeap) heapify(i int) {
-	smallest := i
-	l := 2*i + 1
-	r := 2*i + 2
-	size := len(h.heap)
+func (h MaxHeap) Less(i, j int) bool {
+	return h[i] > h[j]
+}
 
-	if l < size && h.heap[l] < h.heap[smallest] {
-		smallest = l
-	}
+func (h *MaxHeap) Push(x interface{}) {
+	*h = append(*h, x.(int))
+}
 
-	if r < size && h.heap[r] < h.heap[smallest] {
-		smallest = r
-	}
-
-	if i != smallest {
-		h.swap(i, smallest)
-		h.heapify(smallest)
-	}
+func (h *MaxHeap) Pop() interface{} {
+	popped := (*h)[h.Len()-1]
+	*h = (*h)[:h.Len()-1]
+	return popped
 }
 
 func findKthLargest(nums []int, k int) int {
-	h := &MinHeap{heap: nums[:k]}
+	minHeap := MaxHeap(nums)
+	heap.Init(&minHeap)
 
-	for i := k - 1; i >= 0; i-- {
-		h.heapify(i)
+	popped := 0
+
+	for i := 0; i < k; i++ {
+		popped = heap.Pop(&minHeap).(int)
 	}
 
-	for i := k; i < len(nums); i++ {
-		if h.heap[0] < nums[i] {
-			h.heap[0] = nums[i]
-			h.heapify(0)
-		}
-	}
-
-	return h.heap[0]
+	return popped
 }
 
 func DoKthLargestElement() {
+	fmt.Println("kth Larget element")
 	fmt.Println(findKthLargest([]int{3, 2, 1, 5, 6, 4}, 2))
-	// fmt.Println(findKthLargest([]int{20, 10, 60, 30, 50, 40}, 3))
+	fmt.Println(findKthLargest([]int{3, 2, 3, 1, 2, 4, 5, 5, 6}, 4))
 }
