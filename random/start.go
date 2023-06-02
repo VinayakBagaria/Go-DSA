@@ -16,7 +16,5 @@ func DoWork() {
 	fmt.Println(separator)
 	DoMedianFromDataStream()
 	fmt.Println(separator)
-	DoTopKFrequentWords()
-	fmt.Println(separator)
-	DoKthLargestInStream()
+	DoKthSmallestMatrixRowSum()
 }
