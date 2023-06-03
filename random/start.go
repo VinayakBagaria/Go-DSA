@@ -18,5 +18,5 @@ func DoWork() {
 	fmt.Println(separator)
 	DoKthSmallestMatrixRowSum()
 	fmt.Println(separator)
-	DoMergeKSortedLists()
+	DoKPairsClosestSum()
 }
