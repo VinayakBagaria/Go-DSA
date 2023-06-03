@@ -17,4 +17,6 @@ func DoWork() {
 	DoMedianFromDataStream()
 	fmt.Println(separator)
 	DoKthSmallestMatrixRowSum()
+	fmt.Println(separator)
+	DoMergeKSortedLists()
 }
