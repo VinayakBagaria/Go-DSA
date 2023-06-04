@@ -12,5 +12,5 @@ func DoWork() {
 	fmt.Println(separator)
 	DoKthSmallestMatrixRowSum()
 	fmt.Println(separator)
-	DoRemoveDuplicatesFromSortedArray()
+	DoReverseString2()
 }
