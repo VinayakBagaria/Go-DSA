@@ -12,5 +12,5 @@ func DoWork() {
 	fmt.Println(separator)
 	DoKthSmallestMatrixRowSum()
 	fmt.Println(separator)
-	DoReverseString2()
+	DoSlidingWindowMaximum()
 }
