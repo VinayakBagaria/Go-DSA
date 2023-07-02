@@ -6,5 +6,6 @@ const separator = "--------------------------------------"
 
 func DoWork() {
 	fmt.Println(separator)
-	DoPathWithMaximumProbability()
+	// DoShortestPathToGetAllKeys()
+	DoLastDayToCross()
 }
