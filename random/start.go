@@ -8,4 +8,5 @@ func DoWork() {
 	fmt.Println(separator)
 	fmt.Println(wordBreakBottomUp("leetcode", []string{"leet", "code"}))
 	fmt.Println(wordBreakTopDown("leetcode", []string{"leet", "code"}))
+	fmt.Println(wordBreakGraph("leetcode", []string{"leet", "code"}))
 }

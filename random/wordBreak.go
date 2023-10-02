@@ -58,3 +58,38 @@ func wordBreakTopDown(s string, wordDict []string) bool {
 
 	return dfs(0)
 }
+
+
+func wordBreakGraph(s string, wordDict []string) bool {
+	n := len(s)
+	queue := []int{0}
+	seen := make(map[int]struct{})
+	words := make(map[string]struct{})
+
+	for _, w := range wordDict {
+		words[w] = struct{}{}
+	}
+
+	for len(queue) > 0 {
+		start := queue[0]
+		queue = queue[1:]
+
+		if start == n {
+			return true
+		}
+
+		for end := start + 1; end <= n; end++ {
+			if _, ok := seen[end]; ok {
+				continue
+			}
+
+			cur := s[start:end]
+			if _, ok := words[cur]; ok {
+				queue = append(queue, end)
+				seen[end] = struct{}{}
+			}
+		}
+	}
+
+	return false
+}
