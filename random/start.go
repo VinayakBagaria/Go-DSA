@@ -6,6 +6,5 @@ const separator = "--------------------------------------"
 
 func DoWork() {
 	fmt.Println(separator)
-	// DoShortestPathToGetAllKeys()
-	DoSmallestSufficientTeam()
+	fmt.Println(wordBreak("leetcode", []string{"leet", "code"}))
 }
