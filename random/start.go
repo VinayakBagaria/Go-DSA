@@ -6,7 +6,5 @@ const separator = "--------------------------------------"
 
 func DoWork() {
 	fmt.Println(separator)
-	fmt.Println(wordBreakBottomUp("leetcode", []string{"leet", "code"}))
-	fmt.Println(wordBreakTopDown("leetcode", []string{"leet", "code"}))
-	fmt.Println(wordBreakGraph("leetcode", []string{"leet", "code"}))
+	fmt.Println(wordBreak2("catsanddog", []string{"cat","cats","and","sand","dog"}))
 }
