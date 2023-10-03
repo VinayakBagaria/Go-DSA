@@ -77,7 +77,7 @@ func shortestPathAllKeys(grid []string) int {
 		multiGrid[r][c] = '#'
 
 		if encountered == totalKeys || !hasMoreKeys(multiGrid) {
-			minValue = minimizer(minValue, steps)
+			minValue = min(minValue, steps)
 			multiGrid[r][c] = val
 			return
 		}
