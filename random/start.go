@@ -6,5 +6,5 @@ const separator = "--------------------------------------"
 
 func DoWork() {
 	fmt.Println(separator)
-	DoMinPossibleIntAfterKSwaps()
+	DoCourseSchedule()
 }
