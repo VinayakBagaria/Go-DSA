@@ -21,7 +21,7 @@ func findPeak(mountainArr *MountainArray) int {
 		if mountainArr.get(mid) < mountainArr.get(mid+1) {
 			l = mid + 1
 		} else {
-			r = mid - 1
+			r = mid
 		}
 	}
 
