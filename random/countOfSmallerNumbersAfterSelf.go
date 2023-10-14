@@ -29,7 +29,7 @@ func addToSorted(sorted []int, index, target int) []int {
 	return sorted
 }
 
-func countSmaller(nums []int) []int {
+func countSmallerBinarySearch(nums []int) []int {
 	size := len(nums)
 	result := make([]int, size)
 	sorted := []int{}
@@ -44,7 +44,65 @@ func countSmaller(nums []int) []int {
 	return result
 }
 
+type Node struct {
+	Left       *Node
+	Right      *Node
+	EqualCount int
+	LessCount  int
+	Val        int
+}
+
+func NewNode(val int) *Node {
+	return &Node{Val: val, EqualCount: 1, LessCount: 0}
+}
+
+func (t *Node) insert(val int) int {
+	smallerCounts := 0
+	root := t
+
+	for root != nil {
+		if val < root.Val {
+			root.LessCount++
+			if root.Left == nil {
+				root.Left = NewNode(val)
+				break
+			} else {
+				root = root.Left
+			}
+		} else if val > root.Val {
+			smallerCounts += root.EqualCount + root.LessCount
+			if root.Right == nil {
+				root.Right = NewNode(val)
+				break
+			} else {
+				root = root.Right
+			}
+		} else {
+			root.EqualCount++
+			smallerCounts += root.LessCount
+			break
+		}
+	}
+
+	return smallerCounts
+}
+
+func countSmallerTree(nums []int) []int {
+	size := len(nums)
+	result := make([]int, size)
+
+	node := NewNode(nums[size-1])
+	result[size-1] = 0
+
+	for i := size - 2; i >= 0; i-- {
+		result[i] = node.insert(nums[i])
+	}
+
+	return result
+}
+
 func DoCountOfSmallerNumbersAfterSelf() {
-	// fmt.Println(bisectLeft([]int{1, 6}, 2))
-	fmt.Println(countSmaller([]int{5, 2, 6, 1}))
+	fmt.Println(countSmallerTree([]int{5, 2, 6, 1}))
+	fmt.Println(countSmallerTree([]int{-1, -1}))
+	fmt.Println(countSmallerTree([]int{4, 6, 5, 2, 5, 1}))
 }
