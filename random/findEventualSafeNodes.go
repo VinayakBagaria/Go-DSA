@@ -1,55 +1,47 @@
 // https://leetcode.com/problems/find-eventual-safe-states/description/
 package random
 
-import "fmt"
+import (
+	"fmt"
+)
 
-func eventualSafeNodesDfs(graph [][]int) []int {
-	visited := make(map[int]struct{})
-	inRecursion := make(map[int]struct{})
+func eventualSafeNodes(graph [][]int) []int {
+	n := len(graph)
+	safe := make(map[int]bool)
+	seen := make(map[int]bool)
 
-	var isCycle func(int) bool
-	isCycle = func(u int) bool {
-		visited[u] = struct{}{}
-		inRecursion[u] = struct{}{}
+	var dfs func(int) bool
+	dfs = func(u int) bool {
+		if val, ok := safe[u]; ok {
+			return val
+		}
 
+		if _, ok := seen[u]; ok {
+			return false
+		}
+
+		seen[u] = true
 		for _, v := range graph[u] {
-			if exists(visited, v) {
-				if exists(inRecursion, v) {
-					return true
-				}
-			} else {
-				if isCycle(v) {
-					return true
-				}
+			if !dfs(v) {
+				safe[u] = false
+				return safe[u]
 			}
 		}
 
-		delete(inRecursion, u)
-		return false
+		safe[u] = true
+		return safe[u]
 	}
 
-	for u := range graph {
-		if !exists(visited, u) {
-			isCycle(u)
+	nodes := []int{}
+	for i := 0; i < n; i++ {
+		if dfs(i) {
+			nodes = append(nodes, i)
 		}
 	}
-
-	result := []int{}
-	for u := range graph {
-		if !exists(inRecursion, u) {
-			result = append(result, u)
-		}
-	}
-
-	return result
-}
-
-func exists(mapper map[int]struct{}, key int) bool {
-	_, ok := mapper[key]
-	return ok
+	return nodes
 }
 
 func DoFindEventualSafeNodes() {
-	fmt.Println(eventualSafeNodesDfs([][]int{{1, 2}, {2, 3}, {5}, {0}, {5}, {}, {}}))
-	fmt.Println(eventualSafeNodesDfs([][]int{{1, 2, 3, 4}, {1, 2}, {3, 4}, {0, 4}, {}}))
+	fmt.Println(eventualSafeNodes([][]int{{1, 2}, {2, 3}, {5}, {0}, {5}, {}, {}}))
+	fmt.Println(eventualSafeNodes([][]int{{1, 2, 3, 4}, {1, 2}, {3, 4}, {0, 4}, {}}))
 }
