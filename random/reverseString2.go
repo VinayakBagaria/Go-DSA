@@ -3,14 +3,6 @@ package random
 
 import "fmt"
 
-func reverse(str string) string {
-	result := ""
-	for _, v := range str {
-		result = string(v) + result
-	}
-	return result
-}
-
 func reverseStr(s string, k int) string {
 	newString := ""
 	stringLen := len(s)

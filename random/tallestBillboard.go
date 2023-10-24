@@ -3,23 +3,6 @@ package random
 
 import "fmt"
 
-func max(vars ...int) int {
-	maximum := 0
-	for _, v := range vars {
-		if maximum < v {
-			maximum = v
-		}
-	}
-	return maximum
-}
-
-func abs(a int) int {
-	if a < 0 {
-		return -a
-	}
-	return a
-}
-
 func copyMap[K, V comparable](old map[K]V) map[K]V {
 	newMap := make(map[K]V)
 	for k, v := range old {
