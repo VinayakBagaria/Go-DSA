@@ -7,7 +7,7 @@ type TreeNode struct {
 }
 
 func max(vars ...int) int {
-	result := 0
+	result := vars[0]
 	for _, v := range vars {
 		if result < v {
 			result = v
@@ -17,9 +17,9 @@ func max(vars ...int) int {
 }
 
 func min(vars ...int) int {
-	result := 0
+	result := vars[0]
 	for _, v := range vars {
-		if result > v {
+		if v < result {
 			result = v
 		}
 	}
