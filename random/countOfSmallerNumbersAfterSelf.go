@@ -50,6 +50,7 @@ type Node struct {
 	EqualCount int
 	LessCount  int
 	Val        int
+	Neighbors  []*Node
 }
 
 func NewNode(val int) *Node {
