@@ -40,3 +40,5 @@ func reverse(str string) string {
 	}
 	return result
 }
+
+const MOD = 1e9 + 7

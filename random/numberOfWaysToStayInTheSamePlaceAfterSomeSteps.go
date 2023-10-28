@@ -3,8 +3,6 @@ package random
 
 import "fmt"
 
-var MOD = int(1e9 + 7)
-
 func numWays(steps int, arrLen int) int {
 	arrLen = min(steps, arrLen)
 
