@@ -10,7 +10,7 @@ import (
 	"go-dsa/sorting"
 )
 
-const decision = "graph"
+const decision = "linkedlist"
 
 func main() {
 	switch decision {
