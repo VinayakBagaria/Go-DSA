@@ -1,16 +1,18 @@
 package main
 
 import (
+	"go-dsa/codechef"
 	"go-dsa/dp"
 	"go-dsa/graph"
 	"go-dsa/heap"
+	"go-dsa/leetcode"
 	"go-dsa/linkedlist"
 	"go-dsa/queue"
-	"go-dsa/random"
+	"go-dsa/recursion"
 	"go-dsa/sorting"
 )
 
-const decision = "linkedlist"
+const decision = "recursion"
 
 func main() {
 	switch decision {
@@ -24,9 +26,13 @@ func main() {
 		graph.DoWork()
 	case "heap":
 		heap.DoWork()
-	case "random":
-		random.DoWork()
+	case "leetcode":
+		leetcode.DoWork()
 	case "dynamic_programming":
 		dp.DoWork()
+	case "codechef":
+		codechef.DoWork()
+	case "recursion":
+		recursion.DoWork()
 	}
 }
