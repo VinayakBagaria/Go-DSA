@@ -1,5 +1,5 @@
 package recursion
 
 func DoWork() {
-	DoReverseArray()
+	DoTowerOfHanoi()
 }
