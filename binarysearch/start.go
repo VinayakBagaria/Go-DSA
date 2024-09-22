@@ -1,5 +1,5 @@
 package binarysearch
 
 func DoWork() {
-	DoCountZeroes()
+	DoSearchRange()
 }
