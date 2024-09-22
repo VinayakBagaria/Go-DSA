@@ -1,6 +1,7 @@
 package main
 
 import (
+	"go-dsa/binarysearch"
 	"go-dsa/codechef"
 	"go-dsa/dp"
 	"go-dsa/graph"
@@ -12,7 +13,7 @@ import (
 	"go-dsa/sorting"
 )
 
-const decision = "recursion"
+const decision = "binary_search"
 
 func main() {
 	switch decision {
@@ -34,5 +35,7 @@ func main() {
 		codechef.DoWork()
 	case "recursion":
 		recursion.DoWork()
+	case "binary_search":
+		binarysearch.DoWork()
 	}
 }
