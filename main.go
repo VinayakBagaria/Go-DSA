@@ -13,7 +13,7 @@ import (
 	"go-dsa/sorting"
 )
 
-const decision = "recursion"
+const decision = "graph"
 
 func main() {
 	switch decision {
