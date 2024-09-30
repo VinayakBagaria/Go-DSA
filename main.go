@@ -13,7 +13,7 @@ import (
 	"go-dsa/sorting"
 )
 
-const decision = "graph"
+const decision = "binary_search"
 
 func main() {
 	switch decision {
